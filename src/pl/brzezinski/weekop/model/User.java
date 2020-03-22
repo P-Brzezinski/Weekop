@@ -8,16 +8,15 @@ public class User {
     private String username;
     private String email;
     private String password;
-    private boolean active;
+    private boolean is_active;
 
     public User(){};
 
-    public User(long id, String username, String email, String password, boolean active) {
-        this.id = id;
-        this.username = username;
-        this.email = email;
-        this.password = password;
-        this.active = active;
+    public User(User user) {
+        this.id = user.id;
+        this.username = user.username;
+        this.email = user.email;
+        this.password = user.password;
     }
 
     public long getId() {
@@ -52,12 +51,12 @@ public class User {
         this.password = password;
     }
 
-    public boolean isActive() {
-        return active;
+    public boolean isIs_active() {
+        return is_active;
     }
 
-    public void setActive(boolean active) {
-        this.active = active;
+    public void setIs_active(boolean is_active) {
+        this.is_active = is_active;
     }
 
     @Override
@@ -66,7 +65,7 @@ public class User {
         if (o == null || getClass() != o.getClass()) return false;
         User user = (User) o;
         return id == user.id &&
-                active == user.active &&
+                is_active == user.is_active &&
                 Objects.equals(username, user.username) &&
                 Objects.equals(email, user.email) &&
                 Objects.equals(password, user.password);
@@ -74,7 +73,7 @@ public class User {
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, username, email, password, active);
+        return Objects.hash(id, username, email, password, is_active);
     }
 
     @Override
@@ -84,7 +83,7 @@ public class User {
                 ", username='" + username + '\'' +
                 ", email='" + email + '\'' +
                 ", password='" + password + '\'' +
-                ", active=" + active +
+                ", active=" + is_active +
                 '}';
     }
 }
