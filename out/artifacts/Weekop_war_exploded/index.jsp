@@ -30,7 +30,6 @@
               <li><a href="login">Zaloguj się</a></li>
             </c:otherwise>
           </c:choose>
-          <li><a href="#">Zaloguj się</a></li>
         </ul>
       </div>
 

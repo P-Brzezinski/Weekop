@@ -1,4 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
     <title>Weekop - Dodaj nowe treści</title>
@@ -20,7 +21,15 @@
         <div class="collapse navbar-collapse navHeaderCollapse">
             <ul class="nav navbar-nav navbar-right">
                 <li class="active"><a href="#">Główna</a></li>
-                <li><a href="#">Dodaj</a></li>
+                <li><a href="${pageContext.request.contextPath}/add">Dodaj</a></li>
+                <c:choose>
+                    <c:when test="${not empty sessionScope.user}">
+                        <li><a href="${pageContext.request.contextPath}/logout">Wyloguj się</a></li>
+                    </c:when>
+                    <c:otherwise>
+                        <li><a href="${pageContext.request.contextPath}/l" </li>
+                    </c:otherwise>
+                </c:choose>
                 <li><a href="#">Zaloguj się</a></li>
             </ul>
         </div>
@@ -30,7 +39,7 @@
 
 <div class="container">
     <div class="col-md-8 col-md-offset-2">
-        <form class="form-signin" method="post" action="new">
+        <form class="form-signin" method="post" action="add">
             <h2 class="form-signin-heading">Dodaj nowe znalezisko</h2>
             <input name="inputName" type="text" class="form-control" placeholder="Co dodajesz?" required autofocus>
             <input name="inputUrl" type="url" class="form-control" placeholder="URL" required autofocus>
@@ -42,7 +51,7 @@
 
 <footer class="footer">
     <div class="container">
-        <p class="navbar-text">Weekop - developed by <a href="http://javastart.pl">JavaStart.pl</a></p>
+        <p class="navbar-text">Weekop</p>
     </div>
 </footer>
 

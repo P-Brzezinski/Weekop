@@ -22,9 +22,9 @@ public class RegisterController extends HttpServlet {
         req.setCharacterEncoding("UTF-8");
         String username = req.getParameter("inputUsername");
         String password = req.getParameter("inputPassword");
-        String emai = req.getParameter("inputEmail");
+        String email = req.getParameter("inputEmail");
         UserService userService = new UserService();
-        userService.addUser(username, emai, password);
+        userService.addUser(username, email, password);
         resp.sendRedirect(req.getContextPath() + "/");
     }
 }
