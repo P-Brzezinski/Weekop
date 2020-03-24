@@ -21,6 +21,15 @@ public class Vote {
         this.voteType = voteType;
     }
 
+    public Vote(Vote vote) {
+        this.id = vote.id;
+        this.discoveryId = vote.discoveryId;
+        this.userId = vote.userId;
+        this.date = vote.date;
+        this.voteType = vote.voteType;
+
+    }
+
     public long getId() {
         return id;
     }
