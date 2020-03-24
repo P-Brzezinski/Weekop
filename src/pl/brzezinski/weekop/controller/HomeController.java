@@ -18,7 +18,7 @@ public class HomeController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         saveDiscoveriesInRequest(req);
-        req.getRequestDispatcher("index.jsp").forward(req, resp);
+        req.getRequestDispatcher("WEB-INF/index.jsp").forward(req, resp);
     }
 
     private void saveDiscoveriesInRequest(HttpServletRequest request) {
